@@ -215,11 +215,11 @@ describe("Rock-Paper-Scissors", function() {
 
     describe('standard message', function() {
 
-      it('should return a message of the winner', function() {
+      it('should return a message with decapitates', function() {
           player1.picks('scissors');
-          player2.picks('paper');
+          player2.picks('lizard');
 
-          expect(game.announceWinner()).toEqual('Alex wins with scissors');
+          expect(game.announceWinner()).toEqual('Alex decapitates Bob with scissors');
 
       });
 
@@ -227,7 +227,7 @@ describe("Rock-Paper-Scissors", function() {
           player1.picks('rock');
           player2.picks('paper');
 
-          expect(game.announceWinner()).toEqual('Bob wins with paper');
+          expect(game.announceWinner()).toEqual('Bob wharps Alex with paper');
 
       });
 
@@ -243,11 +243,11 @@ describe("Rock-Paper-Scissors", function() {
 
     describe('custom message', function() {
 
-      it('should return a message with the propper action', function() {
+      it('should return a message with cuts', function() {
           player1.picks('scissors');
           player2.picks('paper');
 
-          expect(game.announceWinner()).toEqual('Alex wins with scissors');
+          expect(game.announceWinner()).toEqual('Alex cuts Bob with scissors');
 
       });
 

@@ -34,18 +34,20 @@ Player.prototype.defeats = function(opponent) {
 };
 
 Game.prototype.pairs = {
-								 rock:     { beats: ['scissors', 'lizard'] },
-    						 paper:    { beats: ['rock', 'spock'     ] },
-    						 scissors: { beats: ['paper', 'lizard'   ] },
-    						 lizard: 	 { beats: ['paper', 'spock'    ] },
-    						 spock: 	 { beats: ['scissors', 'rock'  ] }
+								 rock:     { beats: ['scissors', 'lizard'], action: ['smashes', 'smashes'  ]  },
+    						 paper:    { beats: ['rock', 'spock'     ], action: ['wharps', 'disproves' ]  },
+    						 scissors: { beats: ['paper', 'lizard'   ], action: ['cuts', 'decapitates' ]  },
+    						 lizard: 	 { beats: ['paper', 'spock'    ], action: ['eats', 'disproves'   ]  },
+    						 spock: 	 { beats: ['scissors', 'rock'  ], action: ['smashes', 'vaporises']  }
 };
 
 Game.prototype.announceWinner = function() {
 	if (this.winner() === null) return 'It was a DRAW!!!';
-	return (this.winner().name + ' wins with ' + this.winner().pick);
+	return (this.winner().name + this.pickAction(this.winner(), this.loser) + this.loser.name + ' with ' + this.winner().pick);
 };
 
-Game.prototype.pickAction = {
-	
-}
+Game.prototype.pickAction = function(winner, loser) {
+	var action;
+	action = Game.prototype.pairs[winner.pick]['beats'].indexOf(loser.pick);
+	return (' ' + Game.prototype.pairs[winner.pick]['action'][action] + ' ');
+};
