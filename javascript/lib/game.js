@@ -30,7 +30,13 @@ Game.prototype.pairs = {
 
 Game.prototype.announceWinner = function() {
 	if (this.winner() === null) return 'It was a DRAW!!!';
-	return (this.winner().name + this.pickAction(this.winner(), this.loser) + this.loser.name + ' with ' + this.winner().pick);
+  if (this.winner() === this.player1) {
+    this.player1.winnings = this.player1.winnings + 1;
+  }
+  else if (this.winner() === this.player2) {
+    this.player2.winnings = this.player2.winnings + 1;
+  }
+  return (this.winner().name + this.pickAction(this.winner(), this.loser) + this.loser.name + ' with ' + this.winner().pick);
 };
 
 Game.prototype.pickAction = function(winner, loser) {

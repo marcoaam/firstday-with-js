@@ -27,4 +27,15 @@ img:hover {
 	border-radius: 4px;
 	font-size: 18px;
 	color: white;
+	font-family: Helvetica;
 }
+
+#winner, #loser {
+	opacity: 0.6;
+}
+
+#player1, #player2 {
+	font-family: Helvetica;
+	font-size: 15px;
+}
+

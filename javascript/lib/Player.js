@@ -1,6 +1,7 @@
 function Player(name) {
   // 'initialize' method goes here!
   this.name = name;
+  this.winnings = 0;
 };
 
 Player.prototype.picks = function(pick) {
