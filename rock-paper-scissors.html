@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>Rock Paper Scissors Lizard Spock</h1>
-	<section class="choice">
+	<section class="choices">
 		<img src="images/rock.jpg" data-pick="rock">
 		<img src="images/paper.jpg" data-pick="paper">
 		<img src="images/scissors.jpg" data-pick="scissors">
@@ -17,16 +17,21 @@
 	</section>
 	<h2></h2>
 
-	<script type="text/javascript">$(document).ready(function() {
+	<script type="text/javascript">
+	$(document).ready(function() {
 		var player1;
 		var player2;
 		var game;
+
 		player1 = new Player("Marco");
 		player2 = new Player("Computer");
 		game = new Game(player1, player2);
-		player1.picks("rock");
-		player2.picks("paper");
-		$('h2').text(game.announceWinner());
+
+		$('.choices img').on('click', function(){
+			player1.picks($(this).data("pick"));
+			player2.picks("paper");
+			$('h2').text(game.announceWinner());
+		})
 	})
 	</script>
 </body>
