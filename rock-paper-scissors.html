@@ -1,0 +1,34 @@
+<html>
+<head>
+	<link rel="stylesheet" href="stylesheets/stylesheet.css">
+	<script type="text/javascript" src="javascript/lib/RockPaperScissors.js"></script>
+	<script type="text/javascript" src="javascript/jquery.js"></script>
+<title>
+</title>
+</head>
+<body>
+	<h1>Rock Paper Scissors Lizard Spock</h1>
+	<section class="choice">
+		<img src="images/rock.jpg" data-pick="rock">
+		<img src="images/paper.jpg" data-pick="paper">
+		<img src="images/scissors.jpg" data-pick="scissors">
+		<img src="images/lizard.jpg" data-pick="lizard">
+		<img src="images/spock.jpg" data-pick="spock">
+	</section>
+	<h2></h2>
+
+	<script type="text/javascript">$(document).ready(function() {
+		var player1;
+		var player2;
+		var game;
+		player1 = new Player("Marco");
+		player2 = new Player("Computer");
+		game = new Game(player1, player2);
+		player1.picks("rock");
+		player2.picks("paper");
+		$('h2').text(game.announceWinner());
+	})
+	</script>
+</body>
+</body>
+</html>

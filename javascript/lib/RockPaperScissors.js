@@ -7,6 +7,12 @@ Player.prototype.picks = function(pick) {
   this.pick = pick;
 };
 
+Player.prototype.defeats = function(opponent) {
+  return Game.prototype.pairs[this.pick]['beats'].indexOf(opponent.pick) !== -1;
+};
+
+
+
 function Game(player1, player2) {
   this.player1 = player1;
   this.player2 = player2;
@@ -27,10 +33,6 @@ Game.prototype.winner = function() {
 
 Game.prototype._isSamePick = function() {
 	return this.player1.pick === this.player2.pick;
-};
-
-Player.prototype.defeats = function(opponent) {
-	return Game.prototype.pairs[this.pick]['beats'].indexOf(opponent.pick) !== -1;
 };
 
 Game.prototype.pairs = {

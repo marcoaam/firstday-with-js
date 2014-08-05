@@ -1,0 +1,17 @@
+body {
+	text-align: center;
+}
+
+h1 {
+	font-family: Helvetica;
+}
+
+img {
+	width: 13%;
+	margin: 15px;
+	opacity: 0.5;
+}
+
+img:hover {
+	opacity: 1;
+}
