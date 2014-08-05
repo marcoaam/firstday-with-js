@@ -11,6 +11,9 @@ $(document).ready(function() {
 		$('.choices img').on('click', function(){
 			player1.picks($(this).data("pick"));
 			player2.picks(player2.randomSelection());
-			$('h2').text(game.announceWinner());
+			$('<li>' + game.announceWinner() + '</li>').prependTo('#results').slideDown();
+			$('#results li:gt(3)').fadeOut(function() {
+				$(this).remove();
+			})
 		})
 })

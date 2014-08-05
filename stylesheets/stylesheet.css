@@ -16,3 +16,15 @@ img {
 img:hover {
 	opacity: 1;
 }
+
+#results li {
+	display: none;
+	background-color: skyblue;
+	margin: 10px auto;
+	padding: 5px;
+	list-style: none;
+	width: 400px;
+	border-radius: 4px;
+	font-size: 18px;
+	color: white;
+}
